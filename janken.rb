@@ -23,7 +23,7 @@ class Janken
   
   def play
     @player_hand = @options[gets.to_i]
-    @program_hand = @options[rand(4)]
+    @program_hand = @options[rand(3)]
     puts "ホイ！"
     puts "------------"
     puts "あなた:#{@player_hand}を出しました"
@@ -42,8 +42,8 @@ class Janken
     elsif (@player_hand == "グー" && @program_hand == "パー")||(@player_hand == "チョキ" && @program_hand == "グー")||(@player_hand == "パー" && @program_hand == "チョキ")
       puts "相手の勝ちです"
       puts "------------"
-    elsif (@player_hand == "戦わない")||(@program_hand == "戦わない")
-      start
+    elsif (@player_hand == "戦わない")
+      exit
     end
   end
   
@@ -73,7 +73,7 @@ class Janken
     if @player_finger == @program_finger
       puts "勝利!"
       puts "------------"
-      start
+      exit
     else 
       start
     end
