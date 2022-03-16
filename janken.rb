@@ -33,7 +33,7 @@ class Janken
   end
   
   def result
-    if @player_hand == @program_hand
+    if (@player_hand == "グー" && @program_hand == "グー")||(@player_hand == "チョキ" && @program_hand == "チョキ")||(@player_hand == "パー" && @program_hand == "パー")
       puts "あいこで"
       play
     elsif (@player_hand == "グー" && @program_hand == "チョキ")||(@player_hand == "チョキ" && @program_hand == "パー")||(@player_hand == "パー" && @program_hand == "グー")
